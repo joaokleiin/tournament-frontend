@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 40% 4%;
+    --foreground: 210 20% 91%;
+    --card: 220 38% 7%;
+    --card-foreground: 210 20% 91%;
+    --border: 220 25% 14%;
+    --input: 220 25% 14%;
+    --primary: 43 82% 46%;
+    --primary-foreground: 220 40% 4%;
+    --secondary: 220 30% 12%;
+    --secondary-foreground: 210 20% 91%;
+    --muted: 220 30% 10%;
+    --muted-foreground: 215 15% 55%;
+    --accent: 220 25% 14%;
+    --accent-foreground: 210 20% 91%;
+    --destructive: 0 63% 50%;
+    --destructive-foreground: 210 40% 98%;
+    --ring: 43 82% 46%;
+    --radius: 0.5rem;
+
+    /* Design tokens diretos */
+    --obsidian: #080C14;
+    --surface: #0F1623;
+    --surface-high: #1A2335;
+    --gold: #D4A017;
+    --gold-muted: rgba(212, 160, 23, 0.12);
+    --steel: #8899AA;
+    --snow: #E8EDF2;
+    --border-subtle: rgba(255,255,255,0.06);
+  }
+}
+
+@layer base {
+  * { @apply border-border; }
+
+  body {
+    background-color: var(--obsidian);
+    color: var(--snow);
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: var(--surface-high); border-radius: 2px; }
+  ::-webkit-scrollbar-thumb:hover { background: var(--steel); }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fade-in 0.25s ease-out;
+  }
+
+  .text-gold { color: var(--gold); }
+  .bg-gold { background-color: var(--gold); }
+  .bg-gold-muted { background-color: var(--gold-muted); }
+  .border-gold { border-color: var(--gold); }
+  .text-steel { color: var(--steel); }
+  .bg-surface { background-color: var(--surface); }
+  .bg-surface-high { background-color: var(--surface-high); }
+  .border-subtle { border-color: var(--border-subtle); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
